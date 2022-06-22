@@ -1,0 +1,19 @@
+
+
+<!-- check {{users | json}} -->
+<article style='display: grid'>
+  <h1>Github users!</h1>
+<div style='display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 1rem;' *ngIf="users">
+
+<div *ngFor="let user of users | async"> 
+  <a routerLink="/user/{{user.login}}" >{{ user.login }} </a>
+  <div >
+  <img style="height: 80px" src={{user.avatar_url}} alt="avatar">
+  </div>
+
+</div>
+
+</div>
+</article>
